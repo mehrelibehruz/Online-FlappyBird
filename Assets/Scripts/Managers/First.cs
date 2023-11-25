@@ -7,7 +7,7 @@ public class First : MonoBehaviour
 
     private void Awake()
     {
-        if(INSTANCE == null)
+        if (INSTANCE == null)
         {
             INSTANCE = this;
         }
@@ -17,10 +17,19 @@ public class First : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
-    private void Update()
+    //private void Update()
+    //{
+    //    if(Input.GetKeyDown(KeyCode.Alpha5)) { SceneManager.LoadScene("MainMenu"); }
+    //    if(Input.GetKeyDown(KeyCode.Alpha6)) { SceneManager.LoadScene("BoardScene"); }
+    //    if(Input.GetKeyDown(KeyCode.Alpha7)) { SceneManager.LoadScene("Game"); }
+    //}
+
+    public void StartGame()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha5)) { SceneManager.LoadScene("MainMenu"); }
-        if(Input.GetKeyDown(KeyCode.Alpha6)) { SceneManager.LoadScene("BoardScene"); }
-        if(Input.GetKeyDown(KeyCode.Alpha7)) { SceneManager.LoadScene("Game"); }
+        SceneManager.LoadScene("Game");
+    }
+    public void Register()
+    {
+        SceneManager.LoadScene("BoardScene");
     }
 }

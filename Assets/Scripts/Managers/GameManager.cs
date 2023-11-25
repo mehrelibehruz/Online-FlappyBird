@@ -8,5 +8,5 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
     }
-    public int Score { get; set; }      
+    public int Score { get; set; }             
 }
