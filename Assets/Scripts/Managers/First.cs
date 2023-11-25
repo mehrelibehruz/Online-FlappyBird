@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class First : MonoBehaviour
 {
@@ -15,5 +16,11 @@ public class First : MonoBehaviour
             Destroy(INSTANCE);
         }
         DontDestroyOnLoad(gameObject);
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha5)) { SceneManager.LoadScene("MainMenu"); }
+        if(Input.GetKeyDown(KeyCode.Alpha6)) { SceneManager.LoadScene("BoardScene"); }
+        if(Input.GetKeyDown(KeyCode.Alpha7)) { SceneManager.LoadScene("Game"); }
     }
 }

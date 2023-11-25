@@ -1,3 +1,4 @@
+using Assets.Scripts.Managers;
 using UnityEngine;
 
 public class BirdController : MonoBehaviour
@@ -5,6 +6,7 @@ public class BirdController : MonoBehaviour
     [Range(1, 15)][SerializeField] float jumpAmount;
     bool jumpInput = false;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] LevelManager levelManager;
 
     //  private void FixedUpdate()
     //  {
@@ -32,17 +34,14 @@ public class BirdController : MonoBehaviour
         if (collision.gameObject.CompareTag("GameOver"))
         {
             rb.velocity = Vector2.zero;
-            Time.timeScale = 0;
-            print("Game over!");
+            Time.timeScale = 0;            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        print("Score updated");
+    {        
         if (collision.gameObject.CompareTag("Score"))
-        {
-            print("Score updated");
-            //GameManager.instance.Score += 1;
+        {            
+            levelManager.UpdateScore();
         }
     }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -8,5 +8,5 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
     }
-    public int Score { get; set; }
+    public int Score { get; set; }    
 }
