@@ -34,13 +34,13 @@ public class BirdController : MonoBehaviour
         if (collision.gameObject.CompareTag("GameOver"))
         {
             rb.velocity = Vector2.zero;
-            Time.timeScale = 0;            
+            levelManager.GameOver();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    {        
+    {
         if (collision.gameObject.CompareTag("Score"))
-        {            
+        {
             levelManager.UpdateScore();
         }
     }
