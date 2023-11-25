@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 1831666122}
   m_Layer: 0
   m_Name: Bird
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -800,3 +800,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpAmount: 600
   rb: {fileID: 1831666121}
+  collision: {fileID: 0}

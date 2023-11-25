@@ -23,7 +23,7 @@ public class BirdController : MonoBehaviour
 
     private void DoJump()
     {
-        rb.velocity = new Vector2(0, 1 * jumpAmount * Time.deltaTime);
+        rb.velocity = new Vector2(0, 1 * jumpAmount) * Time.deltaTime;
         //  rb.AddForce(Vector2.up, ForceMode2D.Impulse);
     }
 
@@ -34,6 +34,14 @@ public class BirdController : MonoBehaviour
             rb.velocity = Vector2.zero;
             Time.timeScale = 0;
             print("Game over!");
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Score Area")
+        {
+            GameManager.instance.Score += 1;
+            print("Score updated");
         }
     }
 }

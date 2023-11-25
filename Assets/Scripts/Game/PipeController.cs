@@ -4,17 +4,18 @@ public class PipeController : MonoBehaviour
 {
     [Range(0, 15)][SerializeField] float _pipeSpeed;
     [Range(0, 10)][SerializeField] float _destroyTime;
+    [SerializeField] GameObject scoreArea;
     private void Start()
     {
         Destroy(gameObject, _destroyTime);
+        scoreArea.GetComponent<Collider2D>().isTrigger = true;
     }
     private void Update()
     {
+        // MySelf
         transform.Translate(Vector2.left * _pipeSpeed * Time.deltaTime);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameManager.instance.Score += 1;
-        print("Game Over");
+
+        // Other
+        //transform.position += Vector3.left * _pipeSpeed * Time.deltaTime;
     }
 }
