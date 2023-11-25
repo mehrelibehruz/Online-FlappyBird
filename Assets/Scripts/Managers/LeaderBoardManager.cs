@@ -4,15 +4,12 @@ using Dan.Main;
 
 namespace LeaderboardCreatorDemo
 {
-    public class LeaderboardManager : MonoBehaviour
+    public class LeaderBoardManager : MonoBehaviour
     {
         [SerializeField] private TMP_Text[] _entryTextObjects;
         [SerializeField] private TMP_InputField _usernameInputField;
-
-
-        [SerializeField] private GameManager _exampleGame;
-
-        private int Score => _exampleGame.Score;
+      
+        private int Score => GameManager.instance.Score;
 
 
         private void Start()
