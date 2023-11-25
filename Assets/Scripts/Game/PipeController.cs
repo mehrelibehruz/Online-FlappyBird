@@ -12,4 +12,9 @@ public class PipeController : MonoBehaviour
     {
         transform.Translate(Vector2.left * _pipeSpeed * Time.deltaTime);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameManager.instance.Score += 1;
+        print("Game Over");
+    }
 }

@@ -6,11 +6,6 @@ public class BirdController : MonoBehaviour
     bool jumpInput = false;
     [SerializeField] private Rigidbody2D rb;
 
-    private void Start()
-    {
-
-    }
-
     //  private void FixedUpdate()
     //  {
 
@@ -28,7 +23,7 @@ public class BirdController : MonoBehaviour
 
     private void DoJump()
     {
-        rb.velocity = Vector2.up * jumpAmount * Time.deltaTime;
+        rb.velocity = new Vector2(0, 1 * jumpAmount * Time.deltaTime);
         //  rb.AddForce(Vector2.up, ForceMode2D.Impulse);
     }
 
