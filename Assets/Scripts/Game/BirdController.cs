@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    [Range(1, 2000)][SerializeField] float jumpAmount;
+    [Range(1, 15)][SerializeField] float jumpAmount;
     bool jumpInput = false;
     [SerializeField] private Rigidbody2D rb;
 
@@ -23,7 +23,7 @@ public class BirdController : MonoBehaviour
 
     private void DoJump()
     {
-        rb.velocity = new Vector2(0, 1 * jumpAmount) * Time.deltaTime;
+        rb.velocity = new Vector2(0, 1 * jumpAmount); //* Time.deltaTime;
         //  rb.AddForce(Vector2.up, ForceMode2D.Impulse);
     }
 
@@ -38,10 +38,11 @@ public class BirdController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Score Area")
+        print("Score updated");
+        if (collision.gameObject.CompareTag("Score"))
         {
-            GameManager.instance.Score += 1;
             print("Score updated");
+            //GameManager.instance.Score += 1;
         }
     }
 }

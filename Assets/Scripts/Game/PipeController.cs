@@ -4,11 +4,9 @@ public class PipeController : MonoBehaviour
 {
     [Range(0, 15)][SerializeField] float _pipeSpeed;
     [Range(0, 10)][SerializeField] float _destroyTime;
-    [SerializeField] GameObject scoreArea;
     private void Start()
     {
         Destroy(gameObject, _destroyTime);
-        scoreArea.GetComponent<Collider2D>().isTrigger = true;
     }
     private void Update()
     {

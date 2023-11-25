@@ -798,6 +798,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3643d53ee1a8ed4a83d4386979d7c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpAmount: 600
+  jumpAmount: 5
   rb: {fileID: 1831666121}
-  collision: {fileID: 0}
