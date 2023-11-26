@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class First : MonoBehaviour
 {
     public static First INSTANCE;
-
+    
     private void Awake()
     {
         if (INSTANCE == null)
@@ -16,6 +16,10 @@ public class First : MonoBehaviour
             Destroy(INSTANCE);
         }
         DontDestroyOnLoad(gameObject);
+    }
+    private void Start()
+    {
+        Debug.Log("Application Version: " + Application.version);
     }
     //private void Update()
     //{

@@ -6,13 +6,14 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerManager : MonoBehaviour
 {
-
+    [SerializeField] TextMeshProUGUI appVersionInfo;
     //public UnityEngine.SocialPlatforms.Impl.Leaderboard leaderboard;
     [SerializeField] Leaderboard leaderboard;
     public TMP_InputField playerNameInputfield;
     // Start is called before the first frame update
     void Start()
     {
+        appVersionInfo.text = GameManager.instance.AppVersion;
         StartCoroutine(SetupRoutine());
     }
 
