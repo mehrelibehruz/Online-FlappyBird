@@ -1,5 +1,6 @@
 ﻿//using Dan.Demo;
 //using LeaderboardCreatorDemo;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,15 +16,25 @@ namespace Assets.Scripts.Managers
 
         //LeaderboardShowcase leaderboardShowcase;
 
+        [SerializeField] float startDelay;
+
         private void Awake()
         {
             leaderboard = Object.FindAnyObjectByType<Leaderboard>();
-            Time.timeScale = 1;
         }
+
         private void Start()
         {
             overPanel.SetActive(false);
             GameManager.instance.Score = 0;
+            StartCoroutine(StartDelay());
+            
+            Time.timeScale = 0.05f;
+        }
+        IEnumerator StartDelay()
+        {
+            yield return new WaitForSeconds(startDelay);
+            Time.timeScale = 1;
         }
         public void UpdateScore()
         {
@@ -33,10 +44,12 @@ namespace Assets.Scripts.Managers
         }
         public void Restart()
         {
+            SoundManager.instance.Restart();
             SceneManager.LoadScene("Game");
         }
         public void Back()
         {
+            SoundManager.instance.Back();
             SceneManager.LoadScene("MainMenu");
         }
 

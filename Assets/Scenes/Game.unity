@@ -871,6 +871,7 @@ MonoBehaviour:
   leaderboard: {fileID: 950744910}
   scoreText: {fileID: 1461189046}
   overPanel: {fileID: 1970494353}
+  startDelay: 0.02
 --- !u!114 &950744910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,9 +1546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3643d53ee1a8ed4a83d4386979d7c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 950744909}
   jumpAmount: 5
   rb: {fileID: 1831666121}
-  levelManager: {fileID: 950744909}
 --- !u!1 &1946469774
 GameObject:
   m_ObjectHideFlags: 0

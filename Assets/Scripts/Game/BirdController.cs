@@ -1,20 +1,22 @@
 ﻿using Assets.Scripts.Managers;
+using LootLocker.Requests;
 using System.Collections;
 using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    [Range(1, 15)][SerializeField] float jumpAmount;
-    bool jumpInput = false;
-    [SerializeField] private Rigidbody2D rb;
     [SerializeField] LevelManager levelManager;
+
+    [Range(1, 15)][SerializeField] float jumpAmount;
+    [SerializeField] private Rigidbody2D rb;
+    //bool jumpInput = false;
 
     Leaderboard _leaderboard;
     private void Awake()
     {
         _leaderboard = Object.FindObjectOfType<Leaderboard>();
     }
-
+ 
     //  private void FixedUpdate()
     //  {
 
@@ -41,6 +43,7 @@ public class BirdController : MonoBehaviour
         if (collision.gameObject.CompareTag("GameOver"))
         {
             //StartCoroutine(OverDelay());
+            SoundManager.instance.GameOver();
             rb.velocity = Vector2.zero;
             levelManager.GameOver();
             _leaderboard = levelManager.leaderboard;
@@ -48,11 +51,12 @@ public class BirdController : MonoBehaviour
             _leaderboard.SubmitScoreRoutine(_score));
         }
     }
-    IEnumerator OverDelay()
-    {
-        yield return new WaitForSeconds(5f);
-        yield return StartCoroutine(_leaderboard.SubmitScoreRoutine(_score));
-    }
+
+    //IEnumerator OverDelay()
+    //{
+    //    yield return new WaitForSeconds(5f);
+    //    yield return StartCoroutine(_leaderboard.SubmitScoreRoutine(_score));
+    //}
 
     int _score = 0;
     private void OnTriggerEnter2D(Collider2D collision)
