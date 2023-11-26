@@ -1,5 +1,5 @@
-﻿using Dan.Demo;
-using LeaderboardCreatorDemo;
+﻿//using Dan.Demo;
+//using LeaderboardCreatorDemo;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +9,7 @@ namespace Assets.Scripts.Managers
     public class LevelManager : MonoBehaviour
     {
         public Leaderboard leaderboard;
+
         [SerializeField] TextMeshProUGUI scoreText;
         [SerializeField] GameObject overPanel;
 

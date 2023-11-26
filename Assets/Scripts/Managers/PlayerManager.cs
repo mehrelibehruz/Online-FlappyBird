@@ -7,12 +7,13 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PlayerManager : MonoBehaviour
 {
 
-    public UnityEngine.SocialPlatforms.Impl.Leaderboard leaderboard;
+    //public UnityEngine.SocialPlatforms.Impl.Leaderboard leaderboard;
+    [SerializeField] Leaderboard leaderboard;
     public TMP_InputField playerNameInputfield;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LoginRoutine());
+        StartCoroutine(SetupRoutine());
     }
 
     public void SetPlayerName()
@@ -33,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     IEnumerator SetupRoutine()
     {
         yield return LoginRoutine();
-        //yield return leaderboard.FetchTopHighscoresRoutine();
+        yield return leaderboard.FetchTopHighscoresRoutine();
     }
 
     IEnumerator LoginRoutine()
