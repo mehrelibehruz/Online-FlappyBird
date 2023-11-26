@@ -37,7 +37,7 @@ namespace Assets.Scripts.Managers
         }
         public void Back()
         {
-            SceneManager.LoadScene("BoardScene");
+            SceneManager.LoadScene("MainMenu");
         }
 
         public void Quit()
