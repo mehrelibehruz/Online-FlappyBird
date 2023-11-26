@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        AppVersion = Application.version;
+        AppVersion = "Version: " + Application.version;
     }
 
 
     //public string GetAppVersion()
     //{
-    //    return AppVersion;
+    //    return AppVersion = "Version: " + Application.version;
     //}
 }

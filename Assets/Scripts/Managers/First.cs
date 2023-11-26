@@ -17,10 +17,10 @@ public class First : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
-    private void Start()
-    {
-        Debug.Log("Application Version: " + Application.version);
-    }
+    //private void Start()
+    //{
+    //    Debug.Log("Application Version: " + Application.version);
+    //}
     //private void Update()
     //{
     //    if(Input.GetKeyDown(KeyCode.Alpha5)) { SceneManager.LoadScene("MainMenu"); }
