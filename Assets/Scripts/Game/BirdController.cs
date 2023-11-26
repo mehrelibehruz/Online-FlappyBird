@@ -1,4 +1,5 @@
-using Assets.Scripts.Managers;
+﻿using Assets.Scripts.Managers;
+using System.Collections;
 using UnityEngine;
 
 public class BirdController : MonoBehaviour
@@ -7,6 +8,12 @@ public class BirdController : MonoBehaviour
     bool jumpInput = false;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] LevelManager levelManager;
+
+    Leaderboard _leaderboard;
+    private void Awake()
+    {
+        _leaderboard = Object.FindObjectOfType<Leaderboard>();
+    }
 
     //  private void FixedUpdate()
     //  {
@@ -33,15 +40,27 @@ public class BirdController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("GameOver"))
         {
+            //StartCoroutine(OverDelay());
             rb.velocity = Vector2.zero;
             levelManager.GameOver();
+            _leaderboard = levelManager.leaderboard;
+            StartCoroutine(
+            _leaderboard.SubmitScoreRoutine(_score));
         }
     }
+    IEnumerator OverDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        yield return StartCoroutine(_leaderboard.SubmitScoreRoutine(_score));
+    }
+
+    int _score = 0;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Score"))
         {
             levelManager.UpdateScore();
+            _score++;
         }
     }
 }
