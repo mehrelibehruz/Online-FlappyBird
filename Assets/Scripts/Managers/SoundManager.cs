@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
 
     [Header(" -Clips- ")]
     [SerializeField] AudioClip startClip;
-    [SerializeField] AudioClip scoreClip;
+    [SerializeField] AudioClip addScoreClip;
     [SerializeField] AudioClip submitNameClip;
     [SerializeField] AudioClip gameOverClip;
     [SerializeField] AudioClip backClip;
@@ -23,6 +23,10 @@ public class SoundManager : MonoBehaviour
     //[Header(" -Musics- ")]
     // [SerializeField] AudioClip backroundMusic;
 
+    public void AddScore()
+    {
+        mainAudioSource.PlayOneShot(addScoreClip);
+    }
     public void Restart()
     {
         mainAudioSource.PlayOneShot(restartClip);
@@ -35,7 +39,7 @@ public class SoundManager : MonoBehaviour
     {
         mainAudioSource.PlayOneShot(backClip);
     }
-    public void Exit()
+    public void Quit()
     {
         mainAudioSource.PlayOneShot(exitClip);
     }

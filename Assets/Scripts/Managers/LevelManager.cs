@@ -37,6 +37,7 @@ namespace Assets.Scripts.Managers
         public void UpdateScore()
         {
             //LeaderBoardManager.instance.SetScore();
+            SoundManager.instance.AddScore();
             GameManager.instance.Score += 1;
             scoreText.text = GameManager.instance.Score.ToString();
         }
@@ -53,6 +54,7 @@ namespace Assets.Scripts.Managers
 
         public void Quit()
         {
+            SoundManager.instance.Quit();
             Application.Quit();
         }
         public void GameOver()

@@ -1524,11 +1524,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainAudioSource: {fileID: 1218823775}
   startClip: {fileID: 0}
+  addScoreClip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   submitNameClip: {fileID: 0}
   gameOverClip: {fileID: 8300000, guid: 5039414d94a6e4e70a5ab9e8833e992a, type: 3}
   backClip: {fileID: 8300000, guid: 6e33ddb37488d2d4192b1d657d3ee8e6, type: 3}
   restartClip: {fileID: 8300000, guid: 8610b5bf30b2e6542b5686b30de25a1e, type: 3}
-  exitClip: {fileID: 0}
+  exitClip: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
 --- !u!82 &1218823775
 AudioSource:
   m_ObjectHideFlags: 0
