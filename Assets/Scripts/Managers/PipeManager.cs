@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class PipeManager : MonoBehaviour
 {
     [SerializeField] float _topBorder;
