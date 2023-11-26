@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,13 +11,22 @@ public class PlayerManager : MonoBehaviour
     //public UnityEngine.SocialPlatforms.Impl.Leaderboard leaderboard;
     [SerializeField] Leaderboard leaderboard;
     public TMP_InputField playerNameInputfield;
-    // Start is called before the first frame update
+
+
+    //New Code:
+    [SerializeField] Button changeName;
+    [SerializeField] TextMeshProUGUI oldName;
+    [SerializeField] GameObject accountPanel;
     void Start()
     {
         appVersionInfo.text = GameManager.instance.AppVersion;
         StartCoroutine(SetupRoutine());
     }
-
+    public void ChangeName()
+    {
+        accountPanel.SetActive(true);
+        oldName.text = leaderboard.playerNames.text;
+    }
     public void SetPlayerName()
     {
         LootLockerSDKManager.SetPlayerName(playerNameInputfield.text, (response) =>
@@ -30,6 +40,8 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("Could not set player name" + response.errorData);
             }
         });
+        playerNameInputfield.gameObject.SetActive(false); // Go to GameManager
+        changeName.gameObject.SetActive(true);
     }
 
     IEnumerator SetupRoutine()
