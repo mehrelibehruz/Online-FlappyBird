@@ -871,7 +871,7 @@ MonoBehaviour:
   leaderboard: {fileID: 950744910}
   scoreText: {fileID: 1461189046}
   overPanel: {fileID: 1970494353}
-  startDelay: 0.02
+  startDelay: 0.15
 --- !u!114 &950744910
 MonoBehaviour:
   m_ObjectHideFlags: 0

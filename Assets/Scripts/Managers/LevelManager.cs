@@ -27,15 +27,13 @@ namespace Assets.Scripts.Managers
         {
             overPanel.SetActive(false);
             GameManager.instance.Score = 0;
-            StartCoroutine(StartDelay());
-            
-            Time.timeScale = 0.05f;
+            StartCoroutine(StartDelay());                
         }
         IEnumerator StartDelay()
         {
-            yield return new WaitForSeconds(startDelay);
+            yield return new WaitForSecondsRealtime(startDelay);
             Time.timeScale = 1;
-        }
+        }       
         public void UpdateScore()
         {
             //LeaderBoardManager.instance.SetScore();

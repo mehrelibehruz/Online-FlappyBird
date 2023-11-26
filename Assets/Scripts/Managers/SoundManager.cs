@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
 
     [Header(" -Clips- ")]
     [SerializeField] AudioClip startClip;
+    [SerializeField] AudioClip scoreClip;
     [SerializeField] AudioClip submitNameClip;
     [SerializeField] AudioClip gameOverClip;
     [SerializeField] AudioClip backClip;
