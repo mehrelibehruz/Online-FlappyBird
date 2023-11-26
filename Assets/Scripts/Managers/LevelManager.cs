@@ -22,7 +22,7 @@ namespace Assets.Scripts.Managers
         private void Start()
         {
             overPanel.SetActive(false);
-            //GameManager.instance.Score = 0;
+            GameManager.instance.Score = 0;
         }
         public void UpdateScore()
         {
